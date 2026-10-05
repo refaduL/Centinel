@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Visible keyboard focus everywhere — never remove this */
+  :focus-visible {
+    outline: 2px solid theme("colors.flame");
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: theme("colors.flame");
+    color: theme("colors.paper");
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+  }
+
+  /* Used by components/ui/Skeleton.jsx. A moving highlight sweep
+     reads as more "professional"/intentional than Tailwind's built-in
+     animate-pulse (a flat opacity fade) — closer to how loading
+     states look in most polished production apps. Already covered by
+     the prefers-reduced-motion block below (animation-duration gets
+     capped to ~0 there), so no separate reduced-motion handling is
+     needed here. */
+  /* Hardcoded rgba(26,26,26,...) here is `ink` (#1A1A1A) from
+     tailwind.config.js — raw CSS's theme() function doesn't support
+     Tailwind's slash-opacity syntax (bg-ink/6), so the value is
+     spelled out directly. If `ink`'s hex ever changes, update this
+     too. */
+  .skeleton {
+    background-image: linear-gradient(
+      90deg,
+      rgba(26, 26, 26, 0.06) 25%,
+      rgba(26, 26, 26, 0.12) 37%,
+      rgba(26, 26, 26, 0.06) 63%
+    );
+    background-size: 400% 100%;
+    animation: skeleton-shimmer 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Hero mood board (components/home/Hero.jsx + DraggablePin.jsx). Where
+   a piece "lands" after falling off the board — a ring that blooms
+   and fades rather than a hard flash, so it reads as "this one" without
+   looking like an error or validation state. Flame at low alpha, no
+   new color. Scoped via `inherit` so it hugs the product card's own
+   radius instead of drawing a plain rectangle over it. Already covered
+   by the prefers-reduced-motion block below. */
+.product-focus-pulse {
+  animation: product-focus-pulse 1.8s ease-out;
+  border-radius: inherit;
+}
+
+@keyframes product-focus-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(229, 90, 40, 0.65);
+  }
+  60% {
+    box-shadow: 0 0 0 16px rgba(229, 90, 40, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 90, 40, 0);
+  }
+}
+
+/* Hero mood board: two "bonus" mobile pieces (second sticker, sunburst
+   note) that fill the board on a tall portrait phone but don't fit a
+   short landscape one. Plain CSS, not a stacked Tailwind variant, so
+   it's easy to read directly rather than trust to variant-stacking
+   order. */
+@media (max-width: 767px) and (orientation: landscape) {
+  .mood-landscape-hide {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

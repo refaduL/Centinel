@@ -1,0 +1,258 @@
+[
+  {
+    "id": "midcentury-chrome-orange-desk-lamp",
+    "name": "Meridian Desk Lamp",
+    "category": "lamps",
+    "material": "Chrome-plated steel, hand-blown glass",
+    "price": 24800,
+    "currency": "BDT",
+    "description": "An articulated arm in polished chrome carries a warm amber globe. Tilt it low for reading light, or let it wash the wall in gold.",
+    "scene": "golden",
+    "featured": true,
+    "top3picks": false,
+    "image": "/images/products/midcentury-chrome-orange-desk-lamp.jpg",
+    "images": [
+      "/images/products/midcentury-chrome-orange-desk-lamp.jpg",
+      "/images/products/matte-black-dome-lamp.jpg",
+      "/images/products/tapered-red-dome-lamp.jpg"
+    ],
+    "tags": [
+      "desk",
+      "chrome",
+      "amber"
+    ],
+    "sku": "LC-100"
+  },
+  {
+    "id": "glossy-red-mushroom-lamp",
+    "name": "Ember Mushroom Lamp",
+    "category": "lamps",
+    "material": "Lacquered steel",
+    "price": 15600,
+    "currency": "BDT",
+    "description": "A rounded cap in high-gloss lacquer, cast in a single confident color. Small enough for a nightstand, bold enough to notice.",
+    "scene": "evening",
+    "featured": true,
+    "top3picks": false,
+    "image": "/images/products/glossy-red-mushroom-lamp.jpg",
+    "tags": [
+      "nightstand",
+      "compact",
+      "lacquer"
+    ],
+    "sku": "LC-101"
+  },
+  {
+    "id": "matte-black-dome-lamp",
+    "name": "Dusk Dome Lamp",
+    "category": "lamps",
+    "material": "Matte-finished steel",
+    "price": 21200,
+    "currency": "BDT",
+    "description": "A wide dome shade in soft matte black, tall enough to light a whole desk without a single glare point.",
+    "scene": "evening",
+    "featured": false,
+    "top3picks": false,
+    "image": "/images/products/matte-black-dome-lamp.jpg",
+    "tags": [
+      "desk",
+      "matte",
+      "minimal"
+    ],
+    "sku": "LC-102"
+  },
+  {
+    "id": "tapered-red-dome-lamp",
+    "name": "Solstice Table Lamp",
+    "category": "lamps",
+    "material": "Lacquered aluminum",
+    "price": 26400,
+    "currency": "BDT",
+    "description": "A saucer-wide shade balanced on a tapered cone base. Turned on, it pools light outward like the last hour of sunset.",
+    "scene": "golden",
+    "featured": true,
+    "top3picks": true,
+    "image_png": "/images/products/modern-tapered-red-dome-lamp-no-bg.webp",
+    "image": "/images/products/tapered-red-dome-lamp.jpg",
+    "tags": [
+      "statement",
+      "lacquer",
+      "living room"
+    ],
+    "sku": "LC-103"
+  },
+  {
+    "id": "red-chrome-bauhaus-desk-lamp",
+    "name": "Bauhaus Task Lamp",
+    "category": "lamps",
+    "material": "Chrome-plated steel",
+    "price": 27800,
+    "currency": "BDT",
+    "description": "A hinged shade on a curved chrome arm, built for a century of desks and still the most honest task light we sell.",
+    "scene": "daylight",
+    "featured": false,
+    "top3picks": false,
+    "image": "/images/products/red-chrome-bauhaus-desk-lamp.jpg",
+    "tags": [
+      "desk",
+      "task lighting",
+      "chrome"
+    ],
+    "sku": "LC-104"
+  },
+  {
+    "id": "retro-orange-mushroom-lamp",
+    "name": "Amber Globe Lamp",
+    "category": "lamps",
+    "material": "Acrylic",
+    "price": 13200,
+    "currency": "BDT",
+    "description": "Injection-molded acrylic in a single warm hue, lit from within. The whole fixture glows, not just the bulb.",
+    "scene": "evening",
+    "featured": false,
+    "top3picks": false,
+    "image": "/images/products/retro-orange-mushroom-lamp.jpg",
+    "tags": [
+      "acrylic",
+      "compact",
+      "glow"
+    ],
+    "sku": "LC-105"
+  },
+  {
+    "id": "retro-orange-glass-sphere-lamp",
+    "name": "Sphere Accent Lamp",
+    "category": "lamps",
+    "material": "Hand-blown glass, chrome base",
+    "price": 18900,
+    "currency": "BDT",
+    "description": "A single glass sphere, sandblasted from within, set on a low chrome disc. Less a lamp than a small captured sunset.",
+    "scene": "golden",
+    "featured": true,
+    "top3picks": false,
+    "image": "/images/products/retro-orange-glass-sphere-lamp.jpg",
+    "tags": [
+      "accent",
+      "glass",
+      "sculptural"
+    ],
+    "sku": "LC-106"
+  },
+  {
+    "id": "terracotta-wide-belly-pot",
+    "name": "Wide Belly Vessel",
+    "category": "decor",
+    "material": "Unglazed terracotta",
+    "price": 9800,
+    "currency": "BDT",
+    "description": "Hand-coiled terracotta with a rolled lip, left unglazed so the clay itself carries the color.",
+    "scene": "daylight",
+    "featured": true,
+    "top3picks": false,
+    "image": "/images/products/terracotta-wide-belly-pot.jpg",
+    "tags": [
+      "vessel",
+      "terracotta",
+      "handmade"
+    ],
+    "sku": "LC-107"
+  },
+  {
+    "id": "cocoa-ribbed-tumbler",
+    "name": "Ribbed Cocoa Tumbler",
+    "category": "dining",
+    "material": "Stoneware",
+    "price": 3400,
+    "currency": "BDT",
+    "description": "A deep cocoa glaze over a ribbed lower half, thrown to sit comfortably in one hand.",
+    "scene": "daylight",
+    "featured": false,
+    "top3picks": false,
+    "image": "/images/products/cocoa-ribbed-tumbler.jpg",
+    "tags": [
+      "tumbler",
+      "stoneware",
+      "tableware"
+    ],
+    "sku": "LC-108"
+  },
+  {
+    "id": "black-ceramic-desk-lamp",
+    "name": "Glossy Ceramic Table Lamp",
+    "category": "lamps",
+    "material": "Glossy ceramic and fabric",
+    "price": 8500,
+    "currency": "BDT",
+    "description": "A refined table lamp featuring a high-gloss black ceramic base with a gold metallic accent at the neck, topped with a textured black fabric drum shade.",
+    "scene": "evening",
+    "featured": false,
+    "top3picks": true,
+    "image": "/images/products/black-ceramic-desk-lamp.jpeg",
+    "image_png": "/images/products/black-ceramic-desk-lamp-no-bg.webp",
+    "tags": [
+      "lamp",
+      "glossy",
+      "ceramic",
+      "black"
+    ],
+    "sku": "LC-109"
+  },
+  {
+    "id": "brutalist-stone-vase-set",
+    "name": "Weathered Vase Trio",
+    "category": "decor",
+    "material": "Textured stoneware",
+    "price": 16800,
+    "currency": "BDT",
+    "description": "Three vessels in a single family, each finished with a raw, weathered texture that reads like reclaimed stone.",
+    "scene": "daylight",
+    "featured": true,
+    "top3picks": true,
+    "image_png": "/images/products/brutalist-stone-textured-tall-vase-set-no-bg.webp",
+    "image": "/images/products/brutalist-stone-vase-set.jpg",
+    "tags": [
+      "set",
+      "sculptural",
+      "stoneware"
+    ],
+    "sku": "LC-110"
+  },
+  {
+    "id": "minimalist-tapered-tumbler-set",
+    "name": "Tapered Tumbler Pair",
+    "category": "dining",
+    "material": "Glazed stoneware",
+    "price": 4200,
+    "currency": "BDT",
+    "description": "Two tumblers, two glazes, one tapered silhouette. Sold as a pair so no table is set with just one.",
+    "scene": "daylight",
+    "featured": false,
+    "top3picks": false,
+    "image": "/images/products/minimalist-tapered-tumbler-set.jpg",
+    "tags": [
+      "tumbler",
+      "pair",
+      "tableware"
+    ],
+    "sku": "LC-111"
+  },
+  {
+    "id": "modern-black-ribbed-planter",
+    "name": "Ribbed Base Planter",
+    "category": "decor",
+    "material": "Matte ceramic",
+    "price": 7600,
+    "currency": "BDT",
+    "description": "A tapered planter with a ribbed collar, glazed in a matte black that reads calm rather than heavy.",
+    "scene": "daylight",
+    "featured": false,
+    "top3picks": false,
+    "image": "/images/products/modern-black-ribbed-planter.jpg",
+    "tags": [
+      "planter",
+      "matte",
+      "minimal"
+    ],
+    "sku": "LC-112"
+  }
+]
