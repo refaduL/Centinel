@@ -1,7 +1,11 @@
-import { notFound } from "next/navigation";
 import ProductDetail from "@/components/product/ProductDetail";
-import { getAllProducts, getProductBySlug, getAdjacentProducts } from "@/lib/products";
 import { SITE_URL } from "@/lib/brand";
+import {
+  getAdjacentProducts,
+  getAllProducts,
+  getProductBySlug,
+} from "@/lib/products";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
   return getAllProducts().map((product) => ({ slug: product.id }));
@@ -10,7 +14,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const product = getProductBySlug(params.slug);
   if (!product) return {};
-  const title = `${product.name} | Sentinel`;
+  const title = `${product.name} | Centinel`;
   return {
     title,
     description: product.description,

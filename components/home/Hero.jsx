@@ -39,11 +39,11 @@
  * Only the h1 lives on the black headline card, so the page keeps
  * exactly one h1.
  */
-import Link from "next/link";
-import Image from "next/image";
 import DraggablePin from "@/components/home/DraggablePin";
 import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/brand";
 import { BRAND_ORIGIN } from "@/lib/products";
+import Image from "next/image";
+import Link from "next/link";
 
 const HERO_CAST = {
   polaroid: "glossy-red-mushroom-lamp",
@@ -55,7 +55,8 @@ const HERO_CAST = {
 
 // One resting shadow for every paper piece so the board reads as a
 // single light source (top-left). Lift on drag is handled in the pin.
-const PAPER_SHADOW = "shadow-[0_1px_1px_rgba(26,26,26,0.3),0_7px_14px_-5px_rgba(26,26,26,0.45)]";
+const PAPER_SHADOW =
+  "shadow-[0_1px_1px_rgba(26,26,26,0.3),0_7px_14px_-5px_rgba(26,26,26,0.45)]";
 
 // Die-cut sticker outline: four hard offset shadows in cream fake a
 // white sticker border around an irregular cutout, then one soft
@@ -98,7 +99,10 @@ const MAGNET_TONE = {
   clay: "bg-clay",
 };
 
-function Magnet({ tone = "ink", className = "left-1/2 top-[3%] -translate-x-1/2" }) {
+function Magnet({
+  tone = "ink",
+  className = "left-1/2 top-[3%] -translate-x-1/2",
+}) {
   return (
     <span
       aria-hidden="true"
@@ -151,7 +155,7 @@ function TicketButton({ children, ...props }) {
   return (
     <Link
       {...props}
-      className="inline-flex items-center justify-center rounded-full border border-black bg-flame font-medium text-ink shadow-[0_0.4cqw_0_0_#000] transition-all hover:bg-clay active:translate-y-[0.2cqw] active:shadow-[0_0.2cqw_0_0_#000] px-[4cqw] py-[2cqw] text-[3cqw] md:px-[1.3cqw] md:py-[0.6cqw] md:text-[0.85cqw]"
+      className="inline-flex items-center justify-center rounded-full border border-black bg-flame font-bold text-cream shadow-[0_0.4cqw_0_0_#000] transition-all hover:bg-clay active:translate-y-[0.2cqw] active:shadow-[0_0.2cqw_0_0_#000] px-[4cqw] py-[2cqw] text-[3cqw] md:px-[1.3cqw] md:py-[0.6cqw] md:text-[0.98cqw]"
     >
       {children}
     </Link>
@@ -160,7 +164,12 @@ function TicketButton({ children, ...props }) {
 
 function Sticker({ product }) {
   return (
-    <Link href={`/products/${product.id}`} draggable={false} className="block" aria-label={product.name}>
+    <Link
+      href={`/products/${product.id}`}
+      draggable={false}
+      className="block"
+      aria-label={product.name}
+    >
       <Image
         src={product.image_png}
         alt={product.name}
@@ -202,7 +211,7 @@ export default function Hero({ products }) {
         <div
           data-board
           role="region"
-          aria-label="Sentinel magnet board. Drag the pieces around."
+          aria-label="Centinel magnet board. Drag the pieces around."
           className="relative h-full w-full overflow-hidden rounded-[0.6rem] bg-sand md:aspect-[16/10] md:h-auto md:rounded-[0.8rem]"
           style={{
             containerType: "inline-size",
@@ -242,41 +251,72 @@ export default function Hero({ products }) {
             style={{ backgroundImage: SWEEP_BG, backgroundSize: "250% 250%" }}
           /> */}
 
-
-          
           {/* Headline card, the loudest piece: black, inset keyline,
               magnet at the bottom like the reference card. */}
-          <DraggablePin className="left-[4%] top-[3%] w-[74%] md:left-[34%] md:top-[7%] md:w-[30%]" rotate={-1.5} delay={0}>
-            <div className={`relative bg-ink p-[2.2cqw] md:p-[0.7cqw] ${PAPER_SHADOW}`}>
+          <DraggablePin
+            className="left-[4%] top-[3%] w-[74%] md:left-[34%] md:top-[7%] md:w-[30%]"
+            rotate={-1.5}
+            delay={0}
+          >
+            <div
+              className={`relative bg-ink p-[2.2cqw] md:p-[0.7cqw] ${PAPER_SHADOW}`}
+            >
               <div className="border border-cream/45 px-[4cqw] pb-[9cqw] pt-[5cqw] text-center md:px-[1.2cqw] md:pb-[3.2cqw] md:pt-[1.7cqw]">
-                <p className="text-[3.2cqw] text-cream/70 md:text-[0.9cqw]">{BRAND_TAGLINE}</p>
+                <p className="text-[3.2cqw] text-cream/70 md:text-[0.9cqw]">
+                  {BRAND_TAGLINE}
+                </p>
                 <h1 className="mt-[4cqw] text-balance font-display text-[10.5cqw] leading-[0.98] text-cream md:mt-[1.4cqw] md:text-[3cqw]">
                   Make space for warmth.
                 </h1>
               </div>
-              <Magnet tone="clay" className="bottom-[7%] left-1/2 -translate-x-1/2" />
+              <Magnet
+                tone="clay"
+                className="bottom-[7%] left-1/2 -translate-x-1/2"
+              />
             </div>
           </DraggablePin>
 
           {/* Enamel street-sign plate for the workshop's city. */}
-          <DraggablePin className="hidden md:block md:left-[6%] md:top-[50%] md:w-[11%]" rotate={-2} delay={280}>
-            <div className={`rounded-[1.2cqw] bg-ink p-[0.9cqw] md:rounded-[0.5cqw] md:p-[0.3cqw] ${PAPER_SHADOW}`}>
+          <DraggablePin
+            className="hidden md:block md:left-[6%] md:top-[50%] md:w-[11%]"
+            rotate={-2}
+            delay={280}
+          >
+            <div
+              className={`rounded-[1.2cqw] bg-ink p-[0.9cqw] md:rounded-[0.5cqw] md:p-[0.3cqw] ${PAPER_SHADOW}`}
+            >
               <div className="rounded-[0.8cqw] border border-cream/80 px-[1.5cqw] py-[1.8cqw] text-center text-cream md:rounded-[0.3cqw] md:px-[0.4cqw] md:py-[0.5cqw]">
-                <p className="text-[2.6cqw] leading-none text-cream/70 md:text-[0.75cqw]">Based on</p>
-                <p className="mt-[0.8cqw] font-display text-[5cqw] leading-none md:mt-[0.25cqw] md:text-[1.5cqw]">{city}</p>
-                <p className="mt-[0.8cqw] text-[2.6cqw] leading-none text-cream/70 md:mt-[0.25cqw] md:text-[0.75cqw]">{country}</p>
+                <p className="text-[2.6cqw] leading-none text-cream/70 md:text-[0.75cqw]">
+                  Based on
+                </p>
+                <p className="mt-[0.8cqw] font-display text-[5cqw] leading-none md:mt-[0.25cqw] md:text-[1.5cqw]">
+                  {city}
+                </p>
+                <p className="mt-[0.8cqw] text-[2.6cqw] leading-none text-cream/70 md:mt-[0.25cqw] md:text-[0.75cqw]">
+                  {country}
+                </p>
               </div>
             </div>
           </DraggablePin>
 
           {stickerA && (
-            <DraggablePin className="left-[60%] top-[2%] w-[36%] md:left-[58%] md:top-[5%] md:w-[15%]" rotate={6} delay={140} fallToId={stickerA.id}>
+            <DraggablePin
+              className="left-[60%] top-[2%] w-[36%] md:left-[58%] md:top-[5%] md:w-[15%]"
+              rotate={6}
+              delay={140}
+              fallToId={stickerA.id}
+            >
               <Sticker product={stickerA} />
             </DraggablePin>
           )}
 
           {polaroid && (
-            <DraggablePin className="left-[4%] top-[30%] w-[42%] md:left-[7%] md:top-[9%] md:w-[15%]" rotate={-5} delay={70} fallToId={polaroid.id}>
+            <DraggablePin
+              className="left-[4%] top-[30%] w-[42%] md:left-[7%] md:top-[9%] md:w-[15%]"
+              rotate={-5}
+              delay={70}
+              fallToId={polaroid.id}
+            >
               <Polaroid product={polaroid} tone="ink" priority />
             </DraggablePin>
           )}
@@ -284,8 +324,12 @@ export default function Hero({ products }) {
           {/* Photo strip held by washi tape instead of a magnet, so not
               every piece is pinned the same way. Desktop only. */}
           {strip && (
-            <DraggablePin className="left-[70%] top-[40%] w-[26%] md:left-[79%] md:top-[11%] md:w-[12%]"
-            rotate={3} delay={210} fallToId={strip.id}>
+            <DraggablePin
+              className="left-[70%] top-[40%] w-[26%] md:left-[79%] md:top-[11%] md:w-[12%]"
+              rotate={3}
+              delay={210}
+              fallToId={strip.id}
+            >
               <Link
                 href={`/products/${strip.id}`}
                 draggable={false}
@@ -310,8 +354,12 @@ export default function Hero({ products }) {
           )}
 
           {polaroid2 && (
-            <DraggablePin className="left-[6%] top-[62%] w-[30%] md:left-[19%] md:top-[54%] md:w-[14%]"
-            rotate={4} delay={350} fallToId={polaroid2.id}>
+            <DraggablePin
+              className="left-[6%] top-[62%] w-[30%] md:left-[19%] md:top-[54%] md:w-[14%]"
+              rotate={4}
+              delay={350}
+              fallToId={polaroid2.id}
+            >
               <Polaroid product={polaroid2} tone="flame" />
             </DraggablePin>
           )}
@@ -319,17 +367,28 @@ export default function Hero({ products }) {
           {/* The call to action is a paper ticket, the only piece with
               a button on it. Same "hard shadow" Button as the rest of
               the site so it still reads as the primary action. */}
-          <DraggablePin className="left-[4%] top-[78%] w-[92%] md:left-[36%] md:top-[63%] md:w-[29%]" rotate={-3} delay={420}>
-            <div className={`bg-cream px-[3.5cqw] py-[3.5cqw] md:px-[1.4cqw] md:py-[1.3cqw] ${PAPER_SHADOW}`}>
-              <p className="font-mono text-[2.8cqw] text-ink/55 md:text-[0.9cqw]">One way. Sentinel to your shelf.</p>
+          <DraggablePin
+            className="left-[4%] top-[78%] w-[92%] md:left-[36%] md:top-[63%] md:w-[29%]"
+            rotate={-3}
+            delay={420}
+          >
+            <div
+              className={`bg-cream px-[3.5cqw] py-[3.5cqw] md:px-[1.4cqw] md:py-[1.3cqw] ${PAPER_SHADOW}`}
+            >
+              <p className="font-mono text-[2.8cqw] text-ink/55 md:text-[0.9cqw]">
+                One way. Centinel to your shelf.
+              </p>
               <p className="mt-[1.6cqw] font-display text-[5.4cqw] leading-tight text-ink md:mt-[0.5cqw] md:text-[1.9cqw]">
                 Lamps, decor and dining.
               </p>
               <p className="mt-[1.4cqw] max-w-[95%] text-[3.2cqw] leading-snug text-charcoal md:mt-[0.4cqw] md:text-[1cqw]">
-                Hand-finished in small batches, for the hours between daylight and dark.
+                Hand-finished in small batches, for the hours between daylight
+                and dark.
               </p>
               <div className="mt-[3cqw] flex items-center border-t-2 border-dashed border-ink/30 pt-[3cqw] md:mt-[1cqw] md:pt-[1cqw]">
-                <TicketButton href="#collection">See the collection</TicketButton>
+                <TicketButton href="#collection">
+                  See the collection
+                </TicketButton>
               </div>
             </div>
           </DraggablePin>
@@ -363,7 +422,9 @@ export default function Hero({ products }) {
             rotate={-9}
             delay={560}
           >
-            <div className={`relative bg-cream px-[2.4cqw] py-[2.6cqw] pl-[7.2cqw] md:px-[1.1cqw] md:py-[1.3cqw] md:pl-[3.4cqw] ${PAPER_SHADOW}`}>
+            <div
+              className={`relative bg-cream px-[2.4cqw] py-[2.6cqw] pl-[7.2cqw] md:px-[1.1cqw] md:py-[1.3cqw] md:pl-[3.4cqw] ${PAPER_SHADOW}`}
+            >
               <span
                 aria-hidden="true"
                 className="absolute -left-[3.2cqw] top-1/2 h-[9cqw] w-[9cqw] -translate-y-1/2 rounded-full border-2 border-ink md:-left-[1.6cqw] md:h-[4.6cqw] md:w-[4.6cqw]"
@@ -405,10 +466,10 @@ export default function Hero({ products }) {
                 // never reach the text.
                 clipPath:
                   "polygon(" +
-                    "0% 3%, 4% 1%, 9% 4%, 14% 1.5%, 20% 3.5%, 26% 1%, 32% 4%, 38% 1.5%, 44% 3.5%, 50% 1%, 56% 4%, 62% 1.5%, 68% 3.5%, 74% 1%, 80% 4%, 86% 1.5%, 92% 3.5%, 96% 1%, 100% 3%," +
-                    "98% 10%, 100% 18%, 97.5% 26%, 100% 34%, 98% 42%, 100% 50%, 97.5% 58%, 100% 66%, 98% 74%, 100% 82%, 97.5% 90%, 100% 97%," +
-                    "96% 99%, 92% 96.5%, 86% 99%, 80% 96%, 74% 99%, 68% 96.5%, 62% 99%, 56% 96%, 50% 99%, 44% 96.5%, 38% 99%, 32% 96%, 26% 99%, 20% 96.5%, 14% 99%, 9% 96%, 4% 99%, 0% 97%," +
-                    "2% 90%, 0% 82%, 2.5% 74%, 0% 66%, 2% 58%, 0% 50%, 2.5% 42%, 0% 34%, 2% 26%, 0% 18%, 2.5% 10%" +
+                  "0% 3%, 4% 1%, 9% 4%, 14% 1.5%, 20% 3.5%, 26% 1%, 32% 4%, 38% 1.5%, 44% 3.5%, 50% 1%, 56% 4%, 62% 1.5%, 68% 3.5%, 74% 1%, 80% 4%, 86% 1.5%, 92% 3.5%, 96% 1%, 100% 3%," +
+                  "98% 10%, 100% 18%, 97.5% 26%, 100% 34%, 98% 42%, 100% 50%, 97.5% 58%, 100% 66%, 98% 74%, 100% 82%, 97.5% 90%, 100% 97%," +
+                  "96% 99%, 92% 96.5%, 86% 99%, 80% 96%, 74% 99%, 68% 96.5%, 62% 99%, 56% 96%, 50% 99%, 44% 96.5%, 38% 99%, 32% 96%, 26% 99%, 20% 96.5%, 14% 99%, 9% 96%, 4% 99%, 0% 97%," +
+                  "2% 90%, 0% 82%, 2.5% 74%, 0% 66%, 2% 58%, 0% 50%, 2.5% 42%, 0% 34%, 2% 26%, 0% 18%, 2.5% 10%" +
                   ")",
                 filter:
                   "drop-shadow(0 1px 0 rgba(26,26,26,0.25)) drop-shadow(0 8px 14px -5px rgba(26,26,26,0.55))",

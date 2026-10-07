@@ -1,10 +1,11 @@
-import { ArrowUpRight } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
-import { BRAND_ORIGIN } from "@/lib/products";
 import { BRAND_EMAIL, BRAND_PHONE, BRAND_PHONE_HREF } from "@/lib/brand";
+import { BRAND_ORIGIN } from "@/lib/products";
+import { ArrowUpRight } from "lucide-react";
 
-const TITLE = "Contact | Sentinel";
-const DESCRIPTION = "Questions about a piece, an order, or anything else. Get in touch.";
+const TITLE = "Contact | Centinel";
+const DESCRIPTION =
+  "Questions about a piece, an order, or anything else. Get in touch.";
 
 export const metadata = {
   title: TITLE,
@@ -51,7 +52,9 @@ export default function ContactPage() {
           <ContactForm />
 
           <div className="rounded-2xl bg-sand p-8 md:p-10">
-            <p className="text-xs uppercase tracking-widest text-ink/45">Say hello</p>
+            <p className="text-xs uppercase tracking-widest text-ink/45">
+              Say hello
+            </p>
             <ul className="mt-4">
               {CONTACT_DETAILS.map((item) => (
                 <li key={item.label} className="border-b border-ink/10 py-3">
@@ -64,16 +67,23 @@ export default function ContactPage() {
                       <ArrowUpRight size={15} />
                     </a>
                   ) : (
-                    <span className="block text-sm text-ink/70">{item.label}</span>
+                    <span className="block text-sm text-ink/70">
+                      {item.label}
+                    </span>
                   )}
                 </li>
               ))}
             </ul>
 
-            <p className="mt-10 text-xs uppercase tracking-widest text-ink/45">Stalk us</p>
+            <p className="mt-10 text-xs uppercase tracking-widest text-ink/45">
+              Stalk us
+            </p>
             <ul className="mt-4">
               {SOCIALS.map((social) => (
-                <li key={social.label} className="border-b border-ink/10 py-3 last:border-b-0">
+                <li
+                  key={social.label}
+                  className="border-b border-ink/10 py-3 last:border-b-0"
+                >
                   <a
                     href={social.href}
                     target="_blank"

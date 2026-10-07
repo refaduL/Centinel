@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button";
 
 export const metadata = {
-  title: "Page not found | Sentinel",
+  title: "Page not found | Centinel",
 };
 
 /**

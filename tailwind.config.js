@@ -19,8 +19,18 @@ module.exports = {
          *                     "orange" to avoid colliding with
          *                     Tailwind's own built-in orange-50..900
          *                     scale)
+         *   --bold-red:       #C12020
          *   --text-ink:       ink
          *   --text-charcoal:  charcoal
+         
+                  ink: "#1A1A1A",
+                  charcoal: "#333333",
+                  paper: "#F4E5D4",
+                  cream: "#F4E5D4",
+                  sand: "#E7D3C1",
+                  flame: "#E55A28",
+                  clay: "#C94A1A",
+                  boldRed: "#CA1219", BF0603
          *
          * `clay` isn't in your spec — it's the accent's hover/pressed
          * shade (#C94A1A), used on buttons that darken on hover.
@@ -34,8 +44,9 @@ module.exports = {
         paper: "#F4E5D4",
         cream: "#F4E5D4",
         sand: "#E7D3C1",
-        flame: "#E55A28",
-        clay: "#C94A1A",
+        flame: "#BF0603",
+        clay: "#CA1219", // 
+        backup: "#CA1219",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

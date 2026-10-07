@@ -1,8 +1,8 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { track } from "@vercel/analytics";
 import { getAllProducts } from "@/lib/products";
+import { track } from "@vercel/analytics";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const CartContext = createContext(null);
 
@@ -10,7 +10,7 @@ const CartContext = createContext(null);
 // quantity }) ever changes incompatibly — old localStorage data under
 // the previous key just gets ignored (see the try/catch below) rather
 // than crashing anything.
-const STORAGE_KEY = "sentinel-cart-v1";
+const STORAGE_KEY = "Centinel-cart-v1";
 
 // Flat shipping estimate, shown once the cart has items — lives here
 // (not duplicated in CartDrawer and the checkout flow separately) so
@@ -61,7 +61,7 @@ export function CartProvider({ children }) {
           // up, since nothing else ever looks at raw `items` again.
           const catalog = getAllProducts();
           const valid = parsed.filter((item) =>
-            catalog.some((product) => product.id === item.productId)
+            catalog.some((product) => product.id === item.productId),
           );
           setItems(valid);
         }
@@ -93,7 +93,7 @@ export function CartProvider({ children }) {
         return current.map((item) =>
           item.productId === productId
             ? { ...item, quantity: item.quantity + quantity }
-            : item
+            : item,
         );
       }
       return [...current, { productId, quantity }];
@@ -115,7 +115,9 @@ export function CartProvider({ children }) {
   };
 
   const removeItem = (productId) => {
-    setItems((current) => current.filter((item) => item.productId !== productId));
+    setItems((current) =>
+      current.filter((item) => item.productId !== productId),
+    );
     track("remove_from_cart", { productId });
   };
 
@@ -125,7 +127,9 @@ export function CartProvider({ children }) {
       return;
     }
     setItems((current) =>
-      current.map((item) => (item.productId === productId ? { ...item, quantity } : item))
+      current.map((item) =>
+        item.productId === productId ? { ...item, quantity } : item,
+      ),
     );
   };
 
@@ -137,7 +141,8 @@ export function CartProvider({ children }) {
   // Lets an "Add to cart" button reflect whether the product is
   // already in the cart (and switch to "Remove from cart") instead of
   // always showing "Add to cart" regardless of actual state.
-  const isInCart = (productId) => items.some((item) => item.productId === productId);
+  const isInCart = (productId) =>
+    items.some((item) => item.productId === productId);
 
   const lines = useMemo(() => {
     const catalog = getAllProducts();
@@ -150,10 +155,14 @@ export function CartProvider({ children }) {
       .filter(Boolean);
   }, [items]);
 
-  const itemCount = useMemo(() => lines.reduce((sum, line) => sum + line.quantity, 0), [lines]);
+  const itemCount = useMemo(
+    () => lines.reduce((sum, line) => sum + line.quantity, 0),
+    [lines],
+  );
   const subtotal = useMemo(
-    () => lines.reduce((sum, line) => sum + line.product.price * line.quantity, 0),
-    [lines]
+    () =>
+      lines.reduce((sum, line) => sum + line.product.price * line.quantity, 0),
+    [lines],
   );
   const shipping = lines.length > 0 ? SHIPPING_ESTIMATE : 0;
   const total = subtotal + shipping;

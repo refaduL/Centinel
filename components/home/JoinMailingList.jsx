@@ -55,17 +55,8 @@ export default function JoinMailingList() {
   return (
     <section className="bg-clay px-4 py-20 md:py-28">
       <div className="relative mx-auto max-w-xl">
-        <div className="absolute -left-3 -top-6 z-10 rotate-[-8deg] rounded-full border border-black bg-flame px-4 py-1.5 text-[11px] font-medium uppercase tracking-wide text-ink shadow-[0_3px_0_0_#000] sm:-left-6">
+        <div className="absolute -left-3 -top-6 z-10 rotate-[-8deg] rounded-full border border-black bg-flame px-4 py-1.5 text-[11px] font-bold uppercase tracking-wide text-cream shadow-[0_3px_0_0_#000] sm:-left-6">
           Small batch only
-        </div>
-
-        <div className="absolute -bottom-6 -right-2 z-10 flex h-20 w-20 rotate-[9deg] flex-col items-center justify-center gap-0.5 rounded-full border border-dashed border-ink/40 bg-cream text-center shadow-md sm:-right-6 sm:h-24 sm:w-24">
-          <Sparkles size={14} className="text-flame" />
-          <span className="text-[9px] font-medium uppercase leading-tight text-ink">
-            Handmade
-            <br />
-            goods
-          </span>
         </div>
 
         <div className="rounded-3xl bg-cream p-8 text-center shadow-xl sm:p-12">

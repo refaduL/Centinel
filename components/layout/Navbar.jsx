@@ -90,7 +90,7 @@ export default function Navbar() {
               className="h-full w-full object-cover"
             />
           </span>
-          <span className="font-display text-base tracking-tight text-paper md:text-lg">
+          <span className="font-display text-base tracking-wide text-paper md:text-lg">
             {BRAND_NAME}
           </span>
         </a>
@@ -122,15 +122,15 @@ export default function Navbar() {
               aria-label={`Open cart, ${itemCount} item${itemCount === 1 ? "" : "s"}`}
               className="relative flex h-9 w-9 items-center justify-center text-paper/85 transition-colors hover:text-paper"
             >
-              <ShoppingBag size={19} />
+              <ShoppingBag size={22} />
               {itemCount > 0 && (
-                <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-flame text-[10px] font-medium text-ink">
+                <span className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-flame text-[10px] font-bold text-cream shadow-[0_1px_0_0_#000]">
                   {itemCount}
                 </span>
               )}
             </button>
 
-            <Button href="/products" size="sm" className="hidden md:inline-flex">
+            <Button href="/products" size="md" className="hidden md:inline-flex">
               Shop the collection
             </Button>
 
@@ -141,14 +141,14 @@ export default function Navbar() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               className="flex h-9 w-9 items-center justify-center text-paper/85 md:hidden"
             >
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+              {menuOpen ? <X size={22} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </header>
 
       {menuOpen && (
-        <nav className="pointer-events-auto absolute left-4 right-4 top-full mt-2 rounded-2xl bg-ink/95 p-2 shadow-lg backdrop-blur-md md:hidden">
+        <nav className="uppercase pointer-events-auto absolute left-4 right-4 top-full mt-2 rounded-2xl bg-ink/95 p-2 shadow-lg backdrop-blur-md md:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -169,7 +169,7 @@ export default function Navbar() {
           <a
             href="/products"
             onClick={() => setMenuOpen(false)}
-            className="mt-1 block rounded-xl bg-flame px-4 py-3 text-center text-sm font-medium text-ink"
+            className="mt-1 block rounded-xl bg-flame px-4 py-3 text-center text-sm font-medium text-cream shadow-[0_3px_0_0_#000] transition-colors hover:bg-clay"
           >
             Shop the collection
           </a>

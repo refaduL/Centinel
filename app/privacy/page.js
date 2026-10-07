@@ -1,9 +1,9 @@
-import { BRAND_NAME, BRAND_EMAIL } from "@/lib/brand";
+import { BRAND_EMAIL, BRAND_NAME } from "@/lib/brand";
 import { BRAND_ORIGIN } from "@/lib/products";
 
 export const metadata = {
-  title: "Privacy policy | Sentinel",
-  description: "How Sentinel collects, uses, and protects your information.",
+  title: "Privacy policy | Centinel",
+  description: "How Centinel collects, uses, and protects your information.",
 };
 
 /**
@@ -32,32 +32,34 @@ export default function PrivacyPage() {
         <div className="mt-10 space-y-10 text-charcoal">
           <section>
             <p>
-              This policy explains what information {BRAND_NAME} collects when you
-              use this site, why we collect it, and what you can do about it. By
-              using this site, you agree to what's described below.
+              This policy explains what information {BRAND_NAME} collects when
+              you use this site, why we collect it, and what you can do about
+              it. By using this site, you agree to what's described below.
             </p>
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Information we collect</h2>
+            <h2 className="font-display text-xl text-ink">
+              Information we collect
+            </h2>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>
-                <strong>When you place an order:</strong> your name, phone number,
-                delivery address, and the items you've ordered.
+                <strong>When you place an order:</strong> your name, phone
+                number, delivery address, and the items you've ordered.
               </li>
               <li>
-                <strong>When you contact us or join our mailing list:</strong> your
-                name and email address, and anything you write in the message
-                field.
+                <strong>When you contact us or join our mailing list:</strong>{" "}
+                your name and email address, and anything you write in the
+                message field.
               </li>
               <li>
-                <strong>Automatically, when you browse:</strong> basic, aggregated
-                visit data (which pages are viewed, roughly how visitors found
-                the site) via Vercel Analytics, a cookieless analytics tool.
-                It doesn't use tracking cookies and doesn't build a profile
-                tied to you individually. It's also used to record when a
-                cart, checkout, or form action happens (e.g. an item was
-                added to a cart) so we can see where visitors run into
+                <strong>Automatically, when you browse:</strong> basic,
+                aggregated visit data (which pages are viewed, roughly how
+                visitors found the site) via Vercel Analytics, a cookieless
+                analytics tool. It doesn't use tracking cookies and doesn't
+                build a profile tied to you individually. It's also used to
+                record when a cart, checkout, or form action happens (e.g. an
+                item was added to a cart) so we can see where visitors run into
                 trouble, again without identifying who did it.
               </li>
             </ul>
@@ -66,9 +68,9 @@ export default function PrivacyPage() {
           <section>
             <h2 className="font-display text-xl text-ink">How we use it</h2>
             <p className="mt-3">
-              Solely to fulfill your order, respond to what you've asked us, and,
-              if you've opted in, send occasional updates about new pieces or
-              offers. We don't use your information for anything else, and we
+              Solely to fulfill your order, respond to what you've asked us,
+              and, if you've opted in, send occasional updates about new pieces
+              or offers. We don't use your information for anything else, and we
               don't build advertising profiles from it.
             </p>
           </section>
@@ -80,14 +82,16 @@ export default function PrivacyPage() {
               visitors move through it (for example, where in checkout people
               tend to stop). It's cookieless, doesn't sell or share data with
               advertisers, and doesn't track you across other sites. We don't
-              currently run any advertising or cross-site tracking of any
-              kind. If that changes, this section will be updated to say
-              exactly what's added and why.
+              currently run any advertising or cross-site tracking of any kind.
+              If that changes, this section will be updated to say exactly
+              what's added and why.
             </p>
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Sharing your information</h2>
+            <h2 className="font-display text-xl text-ink">
+              Sharing your information
+            </h2>
             <p className="mt-3">
               We don't sell or rent your information to anyone. Checkout is
               currently cash-on-delivery only, so no third-party payment
@@ -98,12 +102,14 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">How long we keep it</h2>
+            <h2 className="font-display text-xl text-ink">
+              How long we keep it
+            </h2>
             <p className="mt-3">
               We keep order information for as long as reasonably needed for
-              record-keeping and to handle any questions about a past order.
-              You can ask us to delete your information at any time. See
-              "Your rights" below.
+              record-keeping and to handle any questions about a past order. You
+              can ask us to delete your information at any time. See "Your
+              rights" below.
             </p>
           </section>
 
@@ -113,7 +119,10 @@ export default function PrivacyPage() {
               You can ask us what information we hold about you, ask us to
               correct it, ask us to delete it, or unsubscribe from any mailing
               list at any time. Email{" "}
-              <a href={`mailto:${BRAND_EMAIL}`} className="text-flame hover:underline">
+              <a
+                href={`mailto:${BRAND_EMAIL}`}
+                className="text-flame hover:underline"
+              >
                 {BRAND_EMAIL}
               </a>{" "}
               and we'll act on it promptly.
@@ -121,7 +130,9 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Children's privacy</h2>
+            <h2 className="font-display text-xl text-ink">
+              Children's privacy
+            </h2>
             <p className="mt-3">
               This site is not directed at children, and we don't knowingly
               collect information from anyone under 13.
@@ -129,10 +140,12 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Changes to this policy</h2>
+            <h2 className="font-display text-xl text-ink">
+              Changes to this policy
+            </h2>
             <p className="mt-3">
-              If this policy changes in any meaningful way, we'll update the date
-              at the top of this page.
+              If this policy changes in any meaningful way, we'll update the
+              date at the top of this page.
             </p>
           </section>
 
@@ -140,7 +153,10 @@ export default function PrivacyPage() {
             <h2 className="font-display text-xl text-ink">Contact</h2>
             <p className="mt-3">
               Questions about this policy or your information:{" "}
-              <a href={`mailto:${BRAND_EMAIL}`} className="text-flame hover:underline">
+              <a
+                href={`mailto:${BRAND_EMAIL}`}
+                className="text-flame hover:underline"
+              >
                 {BRAND_EMAIL}
               </a>
               . {BRAND_NAME} is based in {BRAND_ORIGIN}.

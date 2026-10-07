@@ -65,14 +65,14 @@ and the contact form are client-side simulations only.
 - **Path alias `@/`** maps to the project root (configured in
   `jsconfig.json`) — imports use `@/lib/products`, `@/components/ui/Button`,
   never relative `../../` chains.
-- **Comments explain *why*, not *what***, and are used heavily and
+- **Comments explain _why_, not _what_**, and are used heavily and
   substantively throughout the codebase — design decisions, trade-offs, and
   "if you need to change X, edit Y" pointers are the norm, not sparse
   one-liners. Match this density and style when adding code.
 - **No em dashes in user-facing text** (headings, body copy, button labels,
   page `<title>`/`<meta>` strings). Em dashes remain acceptable inside code
   comments only. Page titles use `|` as a separator
-  (e.g. `"Catalog | Sentinel"`).
+  (e.g. `"Catalog | Centinel"`).
 - Functions and derived values are preferred over hardcoded/duplicated data
   — e.g. batch numbers and collection names in `lib/products.js` are
   computed from existing fields rather than stored as new redundant JSON
@@ -94,7 +94,7 @@ and the contact form are client-side simulations only.
   `Button` has `variant="primary" | "secondary" | "ghost" | "inverse"`).
 - Cart state is a single `CartContext` (`components/cart/CartContext.jsx`),
   provided once in `app/layout.js`, consumed via a `useCart()` hook.
-  **It persists to `localStorage`** (key `sentinel-cart-v1`) via a
+  **It persists to `localStorage`** (key `Centinel-cart-v1`) via a
   two-effect hydrate-then-save pattern gated on a `hasHydrated` flag —
   see README.md's "The cart" section before touching this file; a naive
   single "save on every change" effect will fire on first render with
@@ -116,8 +116,8 @@ and the contact form are client-side simulations only.
   `components/ui/Button.jsx` rather than one-off `className` strings on a
   raw `<button>`. It has a non-obvious Tailwind gotcha documented inline:
   conflicting arbitrary-value utilities (e.g. two different
-  `translate-y-[...]` values) resolve unpredictably by Tailwind's *generated
-  stylesheet order*, not by className string order — read the comments in
+  `translate-y-[...]` values) resolve unpredictably by Tailwind's _generated
+  stylesheet order_, not by className string order — read the comments in
   that file before touching its className composition.
 - `container-page` is a custom utility class (in `globals.css`) for the
   standard centered max-width content wrapper — used instead of repeating

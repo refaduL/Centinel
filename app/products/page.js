@@ -1,8 +1,9 @@
 import ProductCatalog from "@/components/product/ProductCatalog";
 import { getAllProducts, getCategories } from "@/lib/products";
 
-const TITLE = "Catalog | Sentinel";
-const DESCRIPTION = "The full Sentinel catalog of lamps and ceramics, made in small batches.";
+const TITLE = "Catalog | Centinel";
+const DESCRIPTION =
+  "The full Centinel catalog of lamps and ceramics, made in small batches.";
 
 export const metadata = {
   title: TITLE,
@@ -37,7 +38,9 @@ export default function ProductsPage({ searchParams }) {
   return (
     <main className="bg-sand pb-24 pt-36 md:pb-32 md:pt-44">
       <div className="container-page">
-        <p className="font-display text-4xl italic text-ink md:text-5xl">Catalog</p>
+        <p className="font-display text-4xl italic text-ink md:text-5xl">
+          Catalog
+        </p>
 
         <div className="mt-14">
           <ProductCatalog

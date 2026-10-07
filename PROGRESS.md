@@ -2,7 +2,7 @@
 
 This file exists because big multi-part requests sometimes run out of
 room in a single session before every item gets a reply sent back.
-When that happens, the *code changes usually still landed* — what's
+When that happens, the _code changes usually still landed_ — what's
 missing is just the summary message. So:
 
 **At the start of any session working on this project: read this file
@@ -51,7 +51,7 @@ taken further rather than abandoned.
       collection, which briefly glows. New `lib/fallToProduct.js` does
       the scroll+highlight; needed `id="product-<id>"` on the product
       card, which `ProductCard.jsx` already had from the old hero's
-      anchor-link approach (its comment describing *why* is now
+      anchor-link approach (its comment describing _why_ is now
       updated to match the current mechanism). The fall path itself
       went through several rounds based on direct user feedback
       against a reference image — zigzag, then a sine-wave flutter,
@@ -102,6 +102,7 @@ original handover zip, file by file, to confirm only the 6 files above
 changed.
 
 **Open / things worth knowing:**
+
 - No live `npm run dev` available in the environment this was built
   in — everything above was verified by direct inspection (grep,
   Node-loading the config, diffing files) and, for the animation
@@ -180,6 +181,7 @@ file, full em-dash sweep (all remaining instances confirmed to be
 inside comments, none in rendered text), `products.json` still valid.
 
 **Open / things worth knowing:**
+
 - `npm install` needs to run again to pull in `@vercel/analytics`.
 - Vercel Analytics only actually reports data if this is deployed on
   Vercel — if the user deploys elsewhere, this whole piece needs
@@ -248,9 +250,9 @@ framing), and doing everything else now.
       fixes all of them at once. **This still needs to be set to the
       real domain before launch** — right now it's a placeholder.
       Caught and fixed one bug in my own first draft here: I initially
-      added a Next.js title *template* (`"%s | Sentinel"`) to the root
+      added a Next.js title _template_ (`"%s | Centinel"`) to the root
       metadata, which would have doubled up the brand name on every
-      existing page (they all already spell out "Page | Sentinel" in
+      existing page (they all already spell out "Page | Centinel" in
       full) — removed the template before it shipped.
 
 **Verified this session:** brace/paren balance across every touched
@@ -264,6 +266,7 @@ newsletter signup, contact form, and "place order" still don't persist
 anywhere real — all three need the actual database connection first.
 
 **Open / things worth knowing:**
+
 - `SITE_URL` in `lib/brand.js` is a placeholder domain. Set
   `NEXT_PUBLIC_SITE_URL` (or edit the fallback) to the real production
   URL before launch, or the sitemap/robots/social previews all point
@@ -319,7 +322,7 @@ Three separate fixes:
       `html2canvas` (new dependency) to capture the actual rendered
       receipt card and download it as `receipt-<orderId>.png`, at
       `scale: 2` for retina sharpness. Dynamically imported (`await
-      import("html2canvas")`) inside the click handler rather than a
+    import("html2canvas")`) inside the click handler rather than a
       top-level import, so the library only loads when someone
       actually clicks download, not on every checkout page load.
       **Also replaced the barcode's CSS `repeating-linear-gradient`
@@ -346,7 +349,7 @@ Three separate fixes:
 
 **Worth being honest about**: this project's data fetching
 (`lib/products.js`) is synchronous local JSON reads — there's no
-actual network/database latency for these skeletons to cover *yet*.
+actual network/database latency for these skeletons to cover _yet_.
 They're not wasted effort though: Next.js still shows `loading.js`
 during real client-side route-transition latency (the round trip to
 the server + RSC payload), and — more importantly — this is exactly
@@ -358,6 +361,7 @@ which the whole data layer was already built to anticipate.
 file, em-dash sweep on all new/edited rendered text.
 
 **Open / things worth knowing:**
+
 - Wasn't able to visually test the html2canvas capture in a real
   browser (no browser available in this environment) — the SVG-
   barcode swap specifically addresses html2canvas's most commonly-
@@ -415,6 +419,7 @@ file, em-dash sweep on rendered text in the new receipt code, full
 stray-reference and bare-hash-link sweep across the whole project.
 
 **Open / things worth knowing:**
+
 - The download is plain text, not a styled PDF or image. If a
   visually-formatted downloadable receipt is wanted later, that's a
   bigger addition (a new rendering dependency) — flagging now so it's
@@ -474,6 +479,7 @@ correct (opaque interior/frame, transparent surround) before wiring it
 into Hero.
 
 **Open / things worth knowing:**
+
 - The pin positions (`PIN_POSITIONS` in `Hero.jsx`) are hand-placed
   percentages chosen by reasoning about the board's interior bounds
   found via the Python scan, not verified in an actual rendered
@@ -483,7 +489,7 @@ into Hero.
   images). Shooting more `image_png` cutouts is what unlocks pinning
   more products — no code changes needed, `Hero.jsx` renders whatever
   list `app/page.js` passes it.
-- If the *original* board photo (with the user's own existing pinned
+- If the _original_ board photo (with the user's own existing pinned
   items) is actually preferred over the cleaned version, that's a
   one-line swap in `Hero.jsx` (`magnetic-board.webp` instead of
   `magnetic-board-clean.webp`) — both files are in
@@ -511,20 +517,21 @@ conventions. No existing files were modified.
 5 separate asks this time:
 
 - [x] 1. Homepage product card's quick-add button isn't understandable
-      (icon-only Plus). Make it an actual legible "Add to cart" action.
+     (icon-only Plus). Make it an actual legible "Add to cart" action.
 - [x] 2. New footer reference (Leeuwarder Golfclub) — follow it, update
-      current footer again.
+     current footer again.
 - [x] 3. Category taxonomy changes from lamps/ceramics to **lamps,
-      decor, dining** — update products.json category values,
-      CategoryTabs labels, Navbar links, Footer links.
+     decor, dining** — update products.json category values,
+     CategoryTabs labels, Navbar links, Footer links.
 - [x] 4. Contact page layout feels unbalanced — fix it, and swap in
-      playful copy ("Stalk us" instead of "Follow us," etc.).
+     playful copy ("Stalk us" instead of "Follow us," etc.).
 - [x] 5. Checkout confirmation screen should look like a physical
-      receipt (reference: West Tenth Denim receipt — script logo,
-      dashed dividers, dotted-leader itemized list, barcode, monospace
-      typewriter feel).
+     receipt (reference: West Tenth Denim receipt — script logo,
+     dashed dividers, dotted-leader itemized list, barcode, monospace
+     typewriter feel).
 
 **Progress notes (update as completed):**
+
 - [x] Task 1 done — `ProductCard.jsx` compact variant: icon-only Plus
       button replaced with a full "Add to cart" bar (text + icon) that
       slides up from the bottom of the image on hover/focus (desktop)
@@ -674,7 +681,7 @@ products.json (new product, new `image_png` cutout fields, renamed
       `components/ui/Button.jsx`) since the hard black shadow on
       primary/secondary needs a light background to read against.
 - [x] `JoinMailingList.jsx` (new, homepage-only, between Manifesto and
-      ProductShowcase — see `app/page.js`) — the *other* reference
+      ProductShowcase — see `app/page.js`) — the _other_ reference
       (Saturn Skin's "Join the Mailing List" card) went here rather
       than into the footer: a bigger, deliberate "before you go"
       moment with two rotated sticker badges, distinct from the
@@ -706,12 +713,12 @@ a file that actually exists in `public/`.
 
 ---
 
-## Session: Sentinel rebrand + navbar/all-products/product-detail overhaul
+## Session: Centinel rebrand + navbar/all-products/product-detail overhaul
 
 (Summarized from before this file existed — see git history / the
 zip from that turn for exact diffs if needed.)
 
-- [x] Renamed brand to "Sentinel," tagline "Objects for your
+- [x] Renamed brand to "Centinel," tagline "Objects for your
       considered living," centralized in `lib/brand.js`.
 - [x] Logo wired into navbar (`public/images/brand/logo.jpeg`) + used
       as `app/icon.jpeg` favicon.

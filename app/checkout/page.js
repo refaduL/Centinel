@@ -1,7 +1,7 @@
 import CheckoutFlow from "@/components/checkout/CheckoutFlow";
 
 export const metadata = {
-  title: "Checkout | Sentinel",
+  title: "Checkout | Centinel",
 };
 
 export default function CheckoutPage() {

@@ -36,7 +36,7 @@ const BASE =
 
 const VARIANTS = {
   primary:
-    "border border-black bg-flame text-ink shadow-[0_4px_0_0_#000] hover:bg-clay active:translate-y-[2px] active:shadow-[0_2px_0_0_#000] disabled:shadow-[0_4px_0_0_#000] disabled:hover:bg-flame disabled:active:translate-y-0",
+    "border border-black bg-flame text-cream font-bold shadow-[0_4px_0_0_#000] hover:bg-clay active:translate-y-[2px] active:shadow-[0_2px_0_0_#000] disabled:shadow-[0_4px_0_0_#000] disabled:hover:bg-flame disabled:active:translate-y-0",
   secondary:
     "border border-black bg-transparent text-ink shadow-[0_4px_0_0_#000] hover:bg-ink hover:text-paper active:translate-y-[2px] active:shadow-[0_2px_0_0_#000] disabled:shadow-[0_4px_0_0_#000] disabled:active:translate-y-0",
   // !shadow-none (not just shadow-none): SIZES.sm carries its own

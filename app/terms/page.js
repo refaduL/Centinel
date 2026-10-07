@@ -1,9 +1,9 @@
-import { BRAND_NAME, BRAND_EMAIL } from "@/lib/brand";
+import { BRAND_EMAIL, BRAND_NAME } from "@/lib/brand";
 import { BRAND_ORIGIN } from "@/lib/products";
 
 export const metadata = {
-  title: "Terms | Sentinel",
-  description: "The terms that govern using Sentinel and placing an order.",
+  title: "Terms | Centinel",
+  description: "The terms that govern using Centinel and placing an order.",
 };
 
 /**
@@ -35,7 +35,9 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Products and pricing</h2>
+            <h2 className="font-display text-xl text-ink">
+              Products and pricing
+            </h2>
             <p className="mt-3">
               Every piece is made in small batches, so small variations in
               glaze, grain, and finish are part of the piece, not a defect.
@@ -47,7 +49,9 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Orders and payment</h2>
+            <h2 className="font-display text-xl text-ink">
+              Orders and payment
+            </h2>
             <p className="mt-3">
               Placing an order is an offer to buy, which we may accept or
               decline (for example, if an item has sold out since your cart was
@@ -61,24 +65,28 @@ export default function TermsPage() {
             <h2 className="font-display text-xl text-ink">Shipping</h2>
             <p className="mt-3">
               Shipping costs and estimates are shown at checkout. Delivery
-              timing is an estimate, not a guarantee. We're not responsible
-              for delays caused by couriers or events outside our control.
+              timing is an estimate, not a guarantee. We're not responsible for
+              delays caused by couriers or events outside our control.
             </p>
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Returns and exchanges</h2>
+            <h2 className="font-display text-xl text-ink">
+              Returns and exchanges
+            </h2>
             <p className="mt-3">
               If a piece arrives damaged or isn't what you ordered, contact us
               within 7 days of delivery and we'll sort out a replacement or
-              refund. Because each piece is made in small batches, minor
-              natural variation in glaze or texture isn't grounds for a return
-              on its own.
+              refund. Because each piece is made in small batches, minor natural
+              variation in glaze or texture isn't grounds for a return on its
+              own.
             </p>
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Intellectual property</h2>
+            <h2 className="font-display text-xl text-ink">
+              Intellectual property
+            </h2>
             <p className="mt-3">
               The text, photography, and design on this site belong to{" "}
               {BRAND_NAME} and may not be reused without permission.
@@ -86,7 +94,9 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Limitation of liability</h2>
+            <h2 className="font-display text-xl text-ink">
+              Limitation of liability
+            </h2>
             <p className="mt-3">
               We aim for accuracy on every page, but this site is provided as
               is, without warranties beyond what's required by law. To the
@@ -105,10 +115,12 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-xl text-ink">Changes to these terms</h2>
+            <h2 className="font-display text-xl text-ink">
+              Changes to these terms
+            </h2>
             <p className="mt-3">
-              If these terms change in any meaningful way, we'll update the
-              date at the top of this page.
+              If these terms change in any meaningful way, we'll update the date
+              at the top of this page.
             </p>
           </section>
 
@@ -116,7 +128,10 @@ export default function TermsPage() {
             <h2 className="font-display text-xl text-ink">Contact</h2>
             <p className="mt-3">
               Questions about these terms:{" "}
-              <a href={`mailto:${BRAND_EMAIL}`} className="text-flame hover:underline">
+              <a
+                href={`mailto:${BRAND_EMAIL}`}
+                className="text-flame hover:underline"
+              >
                 {BRAND_EMAIL}
               </a>
               .

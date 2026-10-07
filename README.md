@@ -1,6 +1,6 @@
-# Sentinel
+# Centinel
 
-*Objects for your considered living.*
+_Objects for your considered living._
 
 > **Working across multiple sessions?** Check `PROGRESS.md` first —
 > it tracks what's been asked and done turn-by-turn, specifically so a
@@ -89,7 +89,7 @@ public/images/
 
 ## Brand constants
 
-`lib/brand.js` is the one place `BRAND_NAME` ("Sentinel"),
+`lib/brand.js` is the one place `BRAND_NAME` ("Centinel"),
 `BRAND_TAGLINE` ("Objects for your considered living"), `BRAND_EMAIL`,
 `BRAND_PHONE`, `BRAND_PHONE_HREF`, and `SITE_URL` are defined. Navbar,
 Footer, Manifesto, and the contact page all import from here instead
@@ -100,7 +100,7 @@ catalog-derived display helpers — see below.)
 
 **`SITE_URL` needs to be the real production domain before launch.**
 It reads `process.env.NEXT_PUBLIC_SITE_URL` if set, otherwise falls
-back to a placeholder (`https://sentinel.example.com`) — and it's the
+back to a placeholder (`https://Centinel.example.com`) — and it's the
 single source `app/sitemap.js`, `app/robots.js`, and
 `metadataBase`/Open Graph tags in `app/layout.js` all read from, so
 fixing it in one place fixes the sitemap, robots.txt, and every page's
@@ -123,25 +123,25 @@ To add a product, add an object to `data/products.json`:
 {
   "id": "unique-slug",
   "name": "Product Name",
-  "category": "lamps",         // lamps | decor | dining — new values
-                               // show up in the tabs automatically
+  "category": "lamps", // lamps | decor | dining — new values
+  // show up in the tabs automatically
   "material": "Material description",
   "price": 12000,
   "currency": "BDT",
   "description": "One or two sentences.",
-  "scene": "golden",           // daylight | golden | evening — used to
-                               // derive a "Collection" name on the
-                               // featured strip, see getCollectionName()
-  "top3picks": false,          // hand-picked, not automatic — see below
+  "scene": "golden", // daylight | golden | evening — used to
+  // derive a "Collection" name on the
+  // featured strip, see getCollectionName()
+  "top3picks": false, // hand-picked, not automatic — see below
   "image": "/images/products/your-file.jpg",
-  "image_png": null,           // no-background cutout — see "Product photos"
+  "image_png": null, // no-background cutout — see "Product photos"
   "tags": ["desk", "chrome"],
   "sku": "LC-112"
 }
 ```
 
 Drop the image file in `public/images/products/`. A few display fields
-are deliberately *derived* rather than stored, so they can't drift out
+are deliberately _derived_ rather than stored, so they can't drift out
 of sync with the rest of the catalog:
 
 - **Collection name** (shown on the featured strip) comes from the
@@ -203,7 +203,7 @@ strip, desktop-only). Rename or remove one of those ids in
 nothing crashes. **One real trap here**: the two sticker pieces read
 `product.image_png` directly, not through `getDisplayImage()` (see
 "Product photos" above) — Hero needs to know definitively that a piece
-*is* a cutout, not fall back to a regular photo the way that helper
+_is_ a cutout, not fall back to a regular photo the way that helper
 does, since a sticker rendered from a regular photo (with its own
 background) would look like a plain rectangle taped over the board,
 not a floating cutout. That means if a future catalog edit ever removes `image_png` from
@@ -252,11 +252,11 @@ from a keyboard/assistive-tech-triggered one, since `e.button` alone
 can't (both report `0`).
 
 **Mobile is a different shape, not just a smaller one.** From `md`
-up, the board is landscape (16:10) and its *width* is capped against
+up, the board is landscape (16:10) and its _width_ is capped against
 viewport height, so it never runs off the bottom of a short laptop
 screen. Below `md`, the board is portrait and the relationship flips —
-its *height* targets `calc(100dvh - 8rem)` (filling the opening
-screen like a hero should) with *width* then capped against that same
+its _height_ targets `calc(100dvh - 8rem)` (filling the opening
+screen like a hero should) with _width_ then capped against that same
 height, so a short/landscape phone shrinks the whole board
 proportionally instead of stretching it into a flat strip. Two
 pieces (`.mood-landscape-hide` in `globals.css`) drop out specifically
@@ -352,7 +352,7 @@ for `items` / `itemCount` / `subtotal` / `shipping` / `total`, or call
 `addItem` / `removeItem` / `updateQuantity` / `clearCart` /
 `openCart` / `closeCart` / `isInCart`.
 
-**Persists to `localStorage`** under the key `sentinel-cart-v1` — a
+**Persists to `localStorage`** under the key `Centinel-cart-v1` — a
 refresh or closed tab no longer loses the cart. Implemented as two
 effects: one that loads from `localStorage` once on mount (and prunes
 any line whose product no longer exists in `products.json`), and one
@@ -381,7 +381,7 @@ inert until the terms checkbox is ticked, then becomes a real link to
 is a 3-step flow — Shipping details → Payment method → Review — ending
 in a confirmation screen with a generated order number, then clears
 the cart. **Cash on delivery is the only method actually wired up.**
-Card and Mobile Banking show as visibly *disabled* options in the
+Card and Mobile Banking show as visibly _disabled_ options in the
 payment step (not hidden) — see the `PAYMENT_METHODS` array at the top
 of `CheckoutFlow.jsx` for exactly what to change to turn one on: give
 it a real `id`, drop `disabled: true`, and add whatever that
@@ -423,7 +423,7 @@ There's no backend behind any of this yet — `placeOrder()` in
 `clearCart()`. **One thing to know if you wire up a real backend**:
 `placeOrder()` also snapshots `{ lines, subtotal, shipping, total }`
 into `orderSnapshot`
-state *before* calling `clearCart()` — the receipt reads from that
+state _before_ calling `clearCart()` — the receipt reads from that
 snapshot, not live from `useCart()`, because the live cart is already
 empty by the time the confirmation screen renders. Keep that
 snapshot-before-clear ordering (or the equivalent from your API
@@ -460,6 +460,7 @@ real return policy all belong there the day they're added.
 
 Three Next.js file-based conventions, all branded rather than left as
 framework defaults:
+
 - `app/not-found.js` — shown for any unmatched route, and for the
   explicit `notFound()` call in `app/products/[slug]/page.js` when a
   slug doesn't match a real product.
@@ -468,7 +469,7 @@ framework defaults:
   per Next.js's convention; logs to `console.error` for now — that's
   the one place to send errors to Sentry/etc. once you have one.
 - `app/global-error.js` — the fallback for a crash in the root layout
-  *itself* (Navbar, CartProvider, fonts). `app/error.js` can't catch
+  _itself_ (Navbar, CartProvider, fonts). `app/error.js` can't catch
   that, since it renders inside the very layout that would have
   crashed, so this file replaces the entire `<html>` document and
   deliberately avoids depending on anything from that layout (plain
@@ -562,7 +563,7 @@ real content replaces it.
 
 **Worth knowing**: `lib/products.js`'s data fetching is synchronous
 local JSON reads — there's no real network/database latency for these
-to cover *yet*. They're not wasted effort: Next.js still shows
+to cover _yet_. They're not wasted effort: Next.js still shows
 `loading.js` during genuine client-side route-transition latency (the
 round trip to the server + RSC payload), and this is exactly the
 mechanism that starts actually mattering the moment `lib/products.js`
@@ -631,6 +632,7 @@ is never hardcoded — `getCategories()` derives it from whatever
 `category` values exist in `products.json` (currently `lamps` /
 `decor` / `dining`), so a new one shows up as a tab automatically.
 Three places you'll still want to touch by hand:
+
 - `components/product/CategoryTabs.jsx` — add a line to the `LABELS`
   map for a nicer display name (optional; without it, the tab just
   shows the raw category string).
